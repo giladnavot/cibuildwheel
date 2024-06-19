@@ -1,15 +1,15 @@
 ---
 title: Getting Started with Building for Linux
 ---
-Building for Linux in cibuildwheel involves several steps. It starts with defining a `BuildStep` class that contains configurations for the platform, container engine, and container image. The `get_build_steps` function groups Python configurations into `BuildStep` instances, each representing a separate container instance. The `build_in_container` function is then used to execute the build process in a container. It checks if all Python configurations exist, copies the project into the container, sets up the build environment, and builds the wheel. If the build is successful, the built wheel is then repaired, tested, and copied back to the host.
+Building for Linux in cibuildwheel involves several steps. It starts with defining a <SwmToken path="/cibuildwheel/linux.py" pos="47:2:2" line-data="class BuildStep:">`BuildStep`</SwmToken> class that contains configurations for the platform, container engine, and container image. The <SwmToken path="/cibuildwheel/linux.py" pos="92:2:2" line-data="def get_build_steps(">`get_build_steps`</SwmToken> function groups Python configurations into <SwmToken path="/cibuildwheel/linux.py" pos="94:6:6" line-data=") -&gt; Iterator[BuildStep]:">`BuildStep`</SwmToken> instances, each representing a separate container instance. The <SwmToken path="/cibuildwheel/linux.py" pos="154:2:2" line-data="def build_in_container(">`build_in_container`</SwmToken> function is then used to execute the build process in a container. It checks if all Python configurations exist, copies the project into the container, sets up the build environment, and builds the wheel. If the build is successful, the built wheel is then repaired, tested, and copied back to the host.
 
 <SwmSnippet path="/cibuildwheel/linux.py" line="47">
 
 ---
 
-# BuildStep Class
+# <SwmToken path="/cibuildwheel/linux.py" pos="47:2:2" line-data="class BuildStep:">`BuildStep`</SwmToken> Class
 
-The `BuildStep` class represents a single build step, which includes a list of Python configurations (`platform_configs`), a platform tag (`platform_tag`), a container engine configuration (`container_engine`), and a container image (`container_image`). Each instance of this class represents a separate container instance for the build process.
+The <SwmToken path="/cibuildwheel/linux.py" pos="47:2:2" line-data="class BuildStep:">`BuildStep`</SwmToken> class represents a single build step, which includes a list of Python configurations (<SwmToken path="/cibuildwheel/linux.py" pos="48:1:1" line-data="    platform_configs: list[PythonConfiguration]">`platform_configs`</SwmToken>), a platform tag (<SwmToken path="/cibuildwheel/linux.py" pos="49:1:1" line-data="    platform_tag: str">`platform_tag`</SwmToken>), a container engine configuration (<SwmToken path="/cibuildwheel/linux.py" pos="50:1:1" line-data="    container_engine: OCIContainerEngineConfig">`container_engine`</SwmToken>), and a container image (<SwmToken path="/cibuildwheel/linux.py" pos="51:1:1" line-data="    container_image: str">`container_image`</SwmToken>). Each instance of this class represents a separate container instance for the build process.
 
 ```python
 class BuildStep:
@@ -27,9 +27,9 @@ class BuildStep:
 
 ---
 
-# get_build_steps Function
+# <SwmToken path="/cibuildwheel/linux.py" pos="92:2:2" line-data="def get_build_steps(">`get_build_steps`</SwmToken> Function
 
-The `get_build_steps` function groups Python configurations into build steps. It iterates over the Python configurations and for each configuration, it creates a `BuildStep` instance if it doesn't exist already for the given platform tag, container image, and container engine. The function returns an iterator over the build steps.
+The <SwmToken path="/cibuildwheel/linux.py" pos="92:2:2" line-data="def get_build_steps(">`get_build_steps`</SwmToken> function groups Python configurations into build steps. It iterates over the Python configurations and for each configuration, it creates a <SwmToken path="/cibuildwheel/linux.py" pos="94:6:6" line-data=") -&gt; Iterator[BuildStep]:">`BuildStep`</SwmToken> instance if it doesn't exist already for the given platform tag, container image, and container engine. The function returns an iterator over the build steps.
 
 ```python
 def get_build_steps(
@@ -63,9 +63,9 @@ def get_build_steps(
 
 ---
 
-# build_in_container Function
+# <SwmToken path="/cibuildwheel/linux.py" pos="154:2:2" line-data="def build_in_container(">`build_in_container`</SwmToken> Function
 
-The `build_in_container` function is responsible for building and testing the wheels in a Linux container. It first checks if all Python executables exist in the container, then copies the project into the container, and prepares the build environment. It then iterates over the platform configurations and for each configuration, it builds the wheel, repairs it if necessary, and tests it. Finally, it copies the built wheels back to the host.
+The <SwmToken path="/cibuildwheel/linux.py" pos="154:2:2" line-data="def build_in_container(">`build_in_container`</SwmToken> function is responsible for building and testing the wheels in a Linux container. It first checks if all Python executables exist in the container, then copies the project into the container, and prepares the build environment. It then iterates over the platform configurations and for each configuration, it builds the wheel, repairs it if necessary, and tests it. Finally, it copies the built wheels back to the host.
 
 ```python
 def build_in_container(
@@ -99,9 +99,9 @@ def build_in_container(
 
 ---
 
-# build Function
+# <SwmToken path="/cibuildwheel/linux.py" pos="415:2:2" line-data="def build(options: Options, tmp_path: Path) -&gt; None:  # noqa: ARG001">`build`</SwmToken> Function
 
-The `build` function is the entry point for the build process. It first gets the Python configurations and then iterates over the build steps returned by `get_build_steps`. For each build step, it creates a Linux container and calls `build_in_container` to build and test the wheels in the container.
+The <SwmToken path="/cibuildwheel/linux.py" pos="415:2:2" line-data="def build(options: Options, tmp_path: Path) -&gt; None:  # noqa: ARG001">`build`</SwmToken> function is the entry point for the build process. It first gets the Python configurations and then iterates over the build steps returned by <SwmToken path="/cibuildwheel/linux.py" pos="92:2:2" line-data="def get_build_steps(">`get_build_steps`</SwmToken>. For each build step, it creates a Linux container and calls <SwmToken path="/cibuildwheel/linux.py" pos="462:1:1" line-data="                build_in_container(">`build_in_container`</SwmToken> to build and test the wheels in the container.
 
 ```python
 def build(options: Options, tmp_path: Path) -> None:  # noqa: ARG001
@@ -135,4 +135,4 @@ def build(options: Options, tmp_path: Path) -> None:  # noqa: ARG001
 
 *This is an auto-generated document by Swimm AI 🌊 and has not yet been verified by a human*
 
-<SwmMeta version="3.0.0" repo-id="Z2l0aHViJTNBJTNBY2lidWlsZHdoZWVsJTNBJTNBZ2lsYWRuYXZvdA==" repo-name="cibuildwheel"><sup>Powered by [Swimm](https://staging.swimm.cloud/)</sup></SwmMeta>
+<SwmMeta version="3.0.0" repo-id="Z2l0aHViJTNBJTNBY2lidWlsZHdoZWVsJTNBJTNBZ2lsYWRuYXZvdA==" repo-name="cibuildwheel"><sup>Powered by [Swimm](https://app.swimm.io/)</sup></SwmMeta>

@@ -1,11 +1,11 @@
 ---
 title: Overview of Building for Windows
 ---
-Building for Windows in cibuildwheel involves a series of steps to prepare, compile, and package Python wheels. It starts with the `build` function, which retrieves Python configurations for the build using the `get_python_configurations` function. These configurations are based on the build selector and architectures provided.
+Building for Windows in cibuildwheel involves a series of steps to prepare, compile, and package Python wheels. It starts with the <SwmToken path="/cibuildwheel/windows.py" pos="336:2:2" line-data="def build(options: Options, tmp_path: Path) -&gt; None:">`build`</SwmToken> function, which retrieves Python configurations for the build using the <SwmToken path="/cibuildwheel/windows.py" pos="81:2:2" line-data="def get_python_configurations(">`get_python_configurations`</SwmToken> function. These configurations are based on the build selector and architectures provided.
 
-The `build` function also sets up the build environment for each Python configuration. This includes installing the appropriate Python version, setting up virtual environments, and installing build tools. The `setup_python` function is used for this purpose.
+The <SwmToken path="/cibuildwheel/windows.py" pos="336:2:2" line-data="def build(options: Options, tmp_path: Path) -&gt; None:">`build`</SwmToken> function also sets up the build environment for each Python configuration. This includes installing the appropriate Python version, setting up virtual environments, and installing build tools. The <SwmToken path="/cibuildwheel/windows.py" pos="220:2:2" line-data="def setup_python(">`setup_python`</SwmToken> function is used for this purpose.
 
-For cross-compilation, additional setup is required. The `setup_setuptools_cross_compile` function is used to set up the environment for setuptools, and the `setup_rust_cross_compile` function is used for Rust. These functions configure the environment variables and settings necessary for cross-compilation.
+For cross-compilation, additional setup is required. The <SwmToken path="/cibuildwheel/windows.py" pos="143:2:2" line-data="def setup_setuptools_cross_compile(">`setup_setuptools_cross_compile`</SwmToken> function is used to set up the environment for setuptools, and the <SwmToken path="/cibuildwheel/windows.py" pos="191:2:2" line-data="def setup_rust_cross_compile(">`setup_rust_cross_compile`</SwmToken> function is used for Rust. These functions configure the environment variables and settings necessary for cross-compilation.
 
 Once the environment is set up, the wheel is built using the appropriate build frontend (pip or build). If the wheel is successfully built, it is added to a list of built wheels. If any step in the build process fails, an error is raised and the build process is halted.
 
@@ -15,7 +15,7 @@ Once the environment is set up, the wheel is built using the appropriate build f
 
 # Build Function
 
-The `build` function is the main entry point for building wheels for Windows. It takes in options and a temporary path as arguments. The function first retrieves the Python configurations for the build using `get_python_configurations`. It then sets up the environment and installs Python using `setup_python`. Finally, it sets up the build tools and performs the build.
+The <SwmToken path="/cibuildwheel/windows.py" pos="336:2:2" line-data="def build(options: Options, tmp_path: Path) -&gt; None:">`build`</SwmToken> function is the main entry point for building wheels for Windows. It takes in options and a temporary path as arguments. The function first retrieves the Python configurations for the build using <SwmToken path="/cibuildwheel/windows.py" pos="81:2:2" line-data="def get_python_configurations(">`get_python_configurations`</SwmToken>. It then sets up the environment and installs Python using <SwmToken path="/cibuildwheel/windows.py" pos="220:2:2" line-data="def setup_python(">`setup_python`</SwmToken>. Finally, it sets up the build tools and performs the build.
 
 ```python
 def build(options: Options, tmp_path: Path) -> None:
@@ -51,7 +51,7 @@ def build(options: Options, tmp_path: Path) -> None:
 
 # Get Python Configurations
 
-`get_python_configurations` is used to retrieve the Python configurations for the build. It takes a `BuildSelector` and a set of architectures as arguments and returns a list of `PythonConfiguration` objects.
+<SwmToken path="/cibuildwheel/windows.py" pos="81:2:2" line-data="def get_python_configurations(">`get_python_configurations`</SwmToken> is used to retrieve the Python configurations for the build. It takes a <SwmToken path="/cibuildwheel/util.py" pos="239:2:2" line-data="class BuildSelector:">`BuildSelector`</SwmToken> and a set of architectures as arguments and returns a list of <SwmToken path="/cibuildwheel/windows.py" pos="74:2:2" line-data="class PythonConfiguration:">`PythonConfiguration`</SwmToken> objects.
 
 ```python
 def get_python_configurations(
@@ -84,7 +84,7 @@ def get_python_configurations(
 
 # Setup Python
 
-`setup_python` is used to set up the Python environment for the build. It installs the appropriate version of Python and sets up the environment variables needed for the build.
+<SwmToken path="/cibuildwheel/windows.py" pos="220:2:2" line-data="def setup_python(">`setup_python`</SwmToken> is used to set up the Python environment for the build. It installs the appropriate version of Python and sets up the environment variables needed for the build.
 
 ```python
 def setup_python(
@@ -120,7 +120,7 @@ def setup_python(
 
 # Setup Setuptools Cross Compile
 
-`setup_setuptools_cross_compile` is used to set up the environment for cross-compilation. It configures the platform name and library directories for the build, and sets environment variables needed for cross-compilation.
+<SwmToken path="/cibuildwheel/windows.py" pos="143:2:2" line-data="def setup_setuptools_cross_compile(">`setup_setuptools_cross_compile`</SwmToken> is used to set up the environment for cross-compilation. It configures the platform name and library directories for the build, and sets environment variables needed for cross-compilation.
 
 ```python
 def setup_setuptools_cross_compile(
@@ -154,4 +154,4 @@ def setup_setuptools_cross_compile(
 
 *This is an auto-generated document by Swimm AI 🌊 and has not yet been verified by a human*
 
-<SwmMeta version="3.0.0" repo-id="Z2l0aHViJTNBJTNBY2lidWlsZHdoZWVsJTNBJTNBZ2lsYWRuYXZvdA==" repo-name="cibuildwheel"><sup>Powered by [Swimm](https://staging.swimm.cloud/)</sup></SwmMeta>
+<SwmMeta version="3.0.0" repo-id="Z2l0aHViJTNBJTNBY2lidWlsZHdoZWVsJTNBJTNBZ2lsYWRuYXZvdA==" repo-name="cibuildwheel"><sup>Powered by [Swimm](https://app.swimm.io/)</sup></SwmMeta>

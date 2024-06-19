@@ -1,7 +1,11 @@
 ---
 title: Understanding the MacOS Build Process
 ---
-Building for MacOS in cibuildwheel involves a series of steps to ensure compatibility across different Python versions and architectures. The process starts with the identification of the Python configurations that match the selected architectures. This is followed by setting up the Python environment, which includes installing the appropriate Python version and setting up the build environment. The build process also takes into consideration the MacOS version and adjusts the deployment target accordingly. If necessary, the process also involves cross-compilation configurations. The build tools are then installed and the wheel is built. If a wheel compatible with the current configuration has been built previously, the build step is skipped. The built wheel is then repaired if necessary, and finally tested.
+Building for MacOS in cibuildwheel involves a series of steps to ensure compatibility across different Python versions and architectures. The process starts with the identification of the Python configurations that match the selected architectures. This is followed by setting up the Python environment, which includes installing the appropriate Python version and setting up the build environment.
+
+The build process also takes into consideration the MacOS version and adjusts the deployment target accordingly. If necessary, the process also involves cross-compilation configurations.&nbsp;
+
+The build tools are then installed and the wheel is built. If a wheel compatible with the current configuration has been built previously, the build step is skipped. The built wheel is then repaired if necessary, and finally tested.
 
 <SwmSnippet path="/cibuildwheel/macos.py" line="394">
 
@@ -9,7 +13,7 @@ Building for MacOS in cibuildwheel involves a series of steps to ensure compatib
 
 # Build Function
 
-The `build` function is the main entry point for the MacOS build process. It first retrieves the Python configurations using the `get_python_configurations` function. Then, it sets up the build environment and executes the build process for each Python configuration. If any error occurs during the build process, it raises a `FatalError`.
+The <SwmToken path="/cibuildwheel/macos.py" pos="394:2:2" line-data="def build(options: Options, tmp_path: Path) -&gt; None:">`build`</SwmToken> function is the main entry point for the MacOS build process. It first retrieves the Python configurations using the <SwmToken path="/cibuildwheel/macos.py" pos="101:2:2" line-data="def get_python_configurations(">`get_python_configurations`</SwmToken> function. Then, it sets up the build environment and executes the build process for each Python configuration. If any error occurs during the build process, it raises a <SwmToken path="/cibuildwheel/errors.py" pos="8:2:2" line-data="class FatalError(BaseException):">`FatalError`</SwmToken>.
 
 ```python
 def build(options: Options, tmp_path: Path) -> None:
@@ -43,9 +47,9 @@ def build(options: Options, tmp_path: Path) -> None:
 
 ---
 
-# get_python_configurations Function
+# <SwmToken path="/cibuildwheel/macos.py" pos="101:2:2" line-data="def get_python_configurations(">`get_python_configurations`</SwmToken> Function
 
-The `get_python_configurations` function is used to retrieve the Python configurations for the build process. It filters out configurations that don't match the selected architectures and those that are not required by the build selector.
+The <SwmToken path="/cibuildwheel/macos.py" pos="101:2:2" line-data="def get_python_configurations(">`get_python_configurations`</SwmToken> function is used to retrieve the Python configurations for the build process. It filters out configurations that don't match the selected architectures and those that are not required by the build selector.
 
 ```python
 def get_python_configurations(
@@ -79,9 +83,9 @@ def get_python_configurations(
 
 ---
 
-# setup_python Function
+# <SwmToken path="/cibuildwheel/macos.py" pos="198:2:2" line-data="def setup_python(">`setup_python`</SwmToken> Function
 
-The `setup_python` function sets up the Python environment for the build process. It installs the necessary Python version, sets up the virtual environment, and configures the environment variables for the build process.
+The <SwmToken path="/cibuildwheel/macos.py" pos="198:2:2" line-data="def setup_python(">`setup_python`</SwmToken> function sets up the Python environment for the build process. It installs the necessary Python version, sets up the virtual environment, and configures the environment variables for the build process.
 
 ```python
 def setup_python(
@@ -115,9 +119,9 @@ def setup_python(
 
 ---
 
-# get_macos_sdks Function
+# <SwmToken path="/cibuildwheel/macos.py" pos="89:2:2" line-data="def get_macos_sdks() -&gt; list[str]:">`get_macos_sdks`</SwmToken> Function
 
-The `get_macos_sdks` function is used to retrieve the MacOS SDKs available for the build process. It calls the `xcodebuild -showsdks` command and parses the output to get the list of SDKs.
+The <SwmToken path="/cibuildwheel/macos.py" pos="89:2:2" line-data="def get_macos_sdks() -&gt; list[str]:">`get_macos_sdks`</SwmToken> function is used to retrieve the MacOS SDKs available for the build process. It calls the <SwmToken path="/cibuildwheel/macos.py" pos="90:8:8" line-data="    output = call(&quot;xcodebuild&quot;, &quot;-showsdks&quot;, capture_stdout=True)">`xcodebuild`</SwmToken>` `<SwmToken path="/cibuildwheel/macos.py" pos="90:13:14" line-data="    output = call(&quot;xcodebuild&quot;, &quot;-showsdks&quot;, capture_stdout=True)">`-showsdks`</SwmToken> command and parses the output to get the list of SDKs.
 
 ```python
 def get_macos_sdks() -> list[str]:
@@ -131,4 +135,4 @@ def get_macos_sdks() -> list[str]:
 
 *This is an auto-generated document by Swimm AI 🌊 and has not yet been verified by a human*
 
-<SwmMeta version="3.0.0" repo-id="Z2l0aHViJTNBJTNBY2lidWlsZHdoZWVsJTNBJTNBZ2lsYWRuYXZvdA==" repo-name="cibuildwheel"><sup>Powered by [Swimm](https://staging.swimm.cloud/)</sup></SwmMeta>
+<SwmMeta version="3.0.0" repo-id="Z2l0aHViJTNBJTNBY2lidWlsZHdoZWVsJTNBJTNBZ2lsYWRuYXZvdA==" repo-name="cibuildwheel"><sup>Powered by [Swimm](https://app.swimm.io/)</sup></SwmMeta>
