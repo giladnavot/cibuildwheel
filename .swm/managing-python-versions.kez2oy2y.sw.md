@@ -13,7 +13,7 @@ This document will cover how cibuildwheel handles different Python versions. We'
 
 # Defining and Updating Python Versions
 
-The `update_pythons` function is responsible for updating the Python versions. It uses the `AllVersions` class to update the configurations for each Python version. The configurations are then written to the `build-platforms.toml` file.
+The <SwmToken path="/bin/update_pythons.py" pos="298:2:2" line-data="def update_pythons(force: bool, level: str) -&gt; None:">`update_pythons`</SwmToken> function is responsible for updating the Python versions. It uses the <SwmToken path="/bin/update_pythons.py" pos="239:2:2" line-data="class AllVersions:">`AllVersions`</SwmToken> class to update the configurations for each Python version. The configurations are then written to the <SwmPath>[cibuildwheel/resources/build-platforms.toml](/cibuildwheel/resources/build-platforms.toml)</SwmPath> file.
 
 ```python
 def update_pythons(force: bool, level: str) -> None:
@@ -49,7 +49,7 @@ def update_pythons(force: bool, level: str) -> None:
 
 # Installing Python Versions on Windows
 
-On Windows, the `build` function calls `setup_python` to install the required Python version. The `setup_python` function uses classes like `WindowsVersions`, `PyPyVersions`, and `CPythonVersions` to handle different Python versions and architectures.
+On Windows, the <SwmToken path="/cibuildwheel/windows.py" pos="336:2:2" line-data="def build(options: Options, tmp_path: Path) -&gt; None:">`build`</SwmToken> function calls <SwmToken path="/cibuildwheel/windows.py" pos="220:2:2" line-data="def setup_python(">`setup_python`</SwmToken> to install the required Python version. The <SwmToken path="/cibuildwheel/windows.py" pos="220:2:2" line-data="def setup_python(">`setup_python`</SwmToken> function uses classes like <SwmToken path="/bin/update_pythons.py" pos="60:2:2" line-data="class WindowsVersions:">`WindowsVersions`</SwmToken>, <SwmToken path="/bin/update_pythons.py" pos="109:2:2" line-data="class PyPyVersions:">`PyPyVersions`</SwmToken>, and <SwmToken path="/bin/update_pythons.py" pos="188:2:2" line-data="class CPythonVersions:">`CPythonVersions`</SwmToken> to handle different Python versions and architectures.
 
 ```python
 def build(options: Options, tmp_path: Path) -> None:
@@ -85,7 +85,7 @@ def build(options: Options, tmp_path: Path) -> None:
 
 # Installing Python Versions on MacOS
 
-On MacOS, the `build` function also calls `setup_python` to install the required Python version. The `setup_python` function uses `install_cpython` and `install_pypy` to handle different Python versions.
+On MacOS, the `build` function also calls <SwmToken path="/cibuildwheel/macos.py" pos="198:2:2" line-data="def setup_python(">`setup_python`</SwmToken> to install the required Python version. The <SwmToken path="/cibuildwheel/macos.py" pos="198:2:2" line-data="def setup_python(">`setup_python`</SwmToken> function uses <SwmToken path="/cibuildwheel/macos.py" pos="143:2:2" line-data="def install_cpython(tmp: Path, version: str, url: str, free_threading: bool) -&gt; Path:">`install_cpython`</SwmToken> and <SwmToken path="/cibuildwheel/macos.py" pos="183:2:2" line-data="def install_pypy(tmp: Path, url: str) -&gt; Path:">`install_pypy`</SwmToken> to handle different Python versions.
 
 ```python
 def setup_python(
@@ -155,4 +155,4 @@ def build(options: Options, tmp_path: Path) -> None:
 
 *This is an auto-generated document by Swimm AI 🌊 and has not yet been verified by a human*
 
-<SwmMeta version="3.0.0" repo-id="Z2l0aHViJTNBJTNBY2lidWlsZHdoZWVsJTNBJTNBZ2lsYWRuYXZvdA==" repo-name="cibuildwheel" doc-type="follow-up"><sup>Powered by [Swimm](/)</sup></SwmMeta>
+<SwmMeta version="3.0.0" repo-id="Z2l0aHViJTNBJTNBY2lidWlsZHdoZWVsJTNBJTNBZ2lsYWRuYXZvdA==" repo-name="cibuildwheel"><sup>Powered by [Swimm](https://app.swimm.io/)</sup></SwmMeta>

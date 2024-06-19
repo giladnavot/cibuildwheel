@@ -17,7 +17,7 @@ In the context of cibuildwheel, 'overrides' are used to customize the build conf
 
 # How 'overrides' are implemented in the codebase
 
-The 'overrides' concept is implemented through the `Override` class. This class has three attributes: `select_pattern`, `options`, and `inherit`. The `select_pattern` attribute is used to determine which build environments the override applies to. The `options` attribute is a dictionary of settings that should be overridden. The `inherit` attribute is a dictionary that determines how settings should be inherited from the global configuration.
+The 'overrides' concept is implemented through the <SwmToken path="/cibuildwheel/options.py" pos="125:2:2" line-data="class Override:">`Override`</SwmToken> class. This class has three attributes: <SwmToken path="/cibuildwheel/options.py" pos="126:1:1" line-data="    select_pattern: str">`select_pattern`</SwmToken>, <SwmToken path="/cibuildwheel/options.py" pos="127:1:1" line-data="    options: dict[str, Setting]">`options`</SwmToken>, and <SwmToken path="/cibuildwheel/options.py" pos="128:1:1" line-data="    inherit: dict[str, InheritRule]">`inherit`</SwmToken>. The <SwmToken path="/cibuildwheel/options.py" pos="126:1:1" line-data="    select_pattern: str">`select_pattern`</SwmToken> attribute is used to determine which build environments the override applies to. The <SwmToken path="/cibuildwheel/options.py" pos="127:1:1" line-data="    options: dict[str, Setting]">`options`</SwmToken> attribute is a dictionary of settings that should be overridden. The <SwmToken path="/cibuildwheel/options.py" pos="128:1:1" line-data="    inherit: dict[str, InheritRule]">`inherit`</SwmToken> attribute is a dictionary that determines how settings should be inherited from the global configuration.
 
 ```python
 class Override:
@@ -34,7 +34,7 @@ class Override:
 
 ---
 
-The `Override` objects are stored in the `overrides` attribute of the `ConfigReader` class. When a new override is added, it is appended to this list.
+The <SwmToken path="/cibuildwheel/options.py" pos="125:2:2" line-data="class Override:">`Override`</SwmToken> objects are stored in the <SwmToken path="/cibuildwheel/options.py" pos="318:3:3" line-data="        self.overrides: list[Override] = []">`overrides`</SwmToken> attribute of the `ConfigReader` class. When a new override is added, it is appended to this list.
 
 ```python
         self.overrides: list[Override] = []
@@ -68,7 +68,7 @@ The `Override` objects are stored in the `overrides` attribute of the `ConfigRea
 
 ---
 
-The `active_config_overrides` method of the `ConfigReader` class returns a list of `Override` objects that match the current build environment. This is determined by the `selector_matches` function, which checks if the current build environment matches the `select_pattern` of the `Override`.
+The <SwmToken path="/cibuildwheel/options.py" pos="395:3:3" line-data="    def active_config_overrides(self) -&gt; list[Override]:">`active_config_overrides`</SwmToken> method of the `ConfigReader` class returns a list of <SwmToken path="/cibuildwheel/options.py" pos="125:2:2" line-data="class Override:">`Override`</SwmToken> objects that match the current build environment. This is determined by the <SwmToken path="/cibuildwheel/util.py" pos="223:2:2" line-data="def selector_matches(patterns: str, string: str) -&gt; bool:">`selector_matches`</SwmToken> function, which checks if the current build environment matches the <SwmToken path="/cibuildwheel/options.py" pos="126:1:1" line-data="    select_pattern: str">`select_pattern`</SwmToken> of the <SwmToken path="/cibuildwheel/options.py" pos="125:2:2" line-data="class Override:">`Override`</SwmToken>.
 
 ```python
     def active_config_overrides(self) -> list[Override]:
@@ -123,7 +123,7 @@ items:
 
 ---
 
-The `option_summary` method of the `ConfigReader` class provides a summary of a given option, including any overrides. If an override is active for the current build environment, it will be included in the summary.
+The <SwmToken path="/cibuildwheel/options.py" pos="767:3:3" line-data="    def option_summary(">`option_summary`</SwmToken> method of the `ConfigReader` class provides a summary of a given option, including any overrides. If an override is active for the current build environment, it will be included in the summary.
 
 ```python
     def option_summary(
@@ -157,4 +157,4 @@ The `option_summary` method of the `ConfigReader` class provides a summary of a 
 
 *This is an auto-generated document by Swimm AI 🌊 and has not yet been verified by a human*
 
-<SwmMeta version="3.0.0" repo-id="Z2l0aHViJTNBJTNBY2lidWlsZHdoZWVsJTNBJTNBZ2lsYWRuYXZvdA==" repo-name="cibuildwheel" doc-type="follow-up"><sup>Powered by [Swimm](/)</sup></SwmMeta>
+<SwmMeta version="3.0.0" repo-id="Z2l0aHViJTNBJTNBY2lidWlsZHdoZWVsJTNBJTNBZ2lsYWRuYXZvdA==" repo-name="cibuildwheel"><sup>Powered by [Swimm](https://app.swimm.io/)</sup></SwmMeta>

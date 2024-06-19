@@ -1,13 +1,15 @@
 ---
 title: Understanding Build Configuration
 ---
-Build Configuration in cibuildwheel refers to the setup and customization of the build process for Python wheels across different platforms. It is primarily managed through the `BuildOptions` class, which contains various settings such as the build environment, build verbosity, test commands, and more. These options can be set through environment variables or a configuration file, allowing developers to tailor the build process to their specific needs. The configuration also includes platform-specific settings, such as the images used for manylinux and musllinux builds. Furthermore, the build configuration supports the concept of 'overrides', which allows for more granular control of the build process for specific wheel builds.
+Build Configuration in cibuildwheel refers to the setup and customization of the build process for Python wheels across different platforms. It is primarily managed through the <SwmToken path="/cibuildwheel/options.py" pos="82:2:2" line-data="class BuildOptions:">`BuildOptions`</SwmToken> class, which contains various settings such as the build environment, build verbosity, test commands, and more. These options can be set through environment variables or a configuration file, allowing developers to tailor the build process to their specific needs.&nbsp;
+
+The configuration also includes platform-specific settings, such as the images used for manylinux and musllinux builds. Furthermore, the build configuration supports the concept of 'overrides', which allows for more granular control of the build process for specific wheel builds.
 
 <SwmSnippet path="/cibuildwheel/options.py" line="82">
 
 ---
 
-# BuildOptions Class
+# <SwmToken path="/cibuildwheel/options.py" pos="82:2:2" line-data="class BuildOptions:">`BuildOptions`</SwmToken> Class
 
 The `BuildOptions` class is where the build configuration is defined. It includes various attributes such as `globals`, `environment`, `before_all`, `before_build`, `repair_command`, `manylinux_images`, `musllinux_images`, `dependency_constraints`, `test_command`, `before_test`, `test_requires`, `test_extras`, `build_verbosity`, `build_frontend`, `config_settings`, and `container_engine`. Each of these attributes represents a specific aspect of the build configuration.
 
@@ -43,9 +45,9 @@ class BuildOptions:
 
 ---
 
-# build_options Function
+# <SwmToken path="/cibuildwheel/options.py" pos="563:3:3" line-data="    def build_options(self, identifier: str | None) -&gt; BuildOptions:">`build_options`</SwmToken> Function
 
-The `build_options` function is used to compute the `BuildOptions` for a single run configuration. It reads the options from the environment, configuration file, or the default values, and returns a `BuildOptions` object.
+The <SwmToken path="/cibuildwheel/options.py" pos="563:3:3" line-data="    def build_options(self, identifier: str | None) -&gt; BuildOptions:">`build_options`</SwmToken> function is used to compute the <SwmToken path="/cibuildwheel/options.py" pos="82:2:2" line-data="class BuildOptions:">`BuildOptions`</SwmToken> for a single run configuration. It reads the options from the environment, configuration file, or the default values, and returns a <SwmToken path="/cibuildwheel/options.py" pos="82:2:2" line-data="class BuildOptions:">`BuildOptions`</SwmToken> object.
 
 ```python
     def build_options(self, identifier: str | None) -> BuildOptions:
@@ -79,9 +81,9 @@ The `build_options` function is used to compute the `BuildOptions` for a single 
 
 ---
 
-# get Function
+# <SwmToken path="/cibuildwheel/options.py" pos="410:3:3" line-data="    def get(">`get`</SwmToken> Function
 
-The `get` function is used within the `build_options` function to get and return the value for a named option from the environment, configuration file, or the default. It also handles the formatting of array and table values.
+The <SwmToken path="/cibuildwheel/options.py" pos="410:3:3" line-data="    def get(">`get`</SwmToken> function is used within the <SwmToken path="/cibuildwheel/options.py" pos="563:3:3" line-data="    def build_options(self, identifier: str | None) -&gt; BuildOptions:">`build_options`</SwmToken> function to get and return the value for a named option from the environment, configuration file, or the default. It also handles the formatting of array and table values.
 
 ```python
     def get(
@@ -115,4 +117,4 @@ The `get` function is used within the `build_options` function to get and return
 
 *This is an auto-generated document by Swimm AI 🌊 and has not yet been verified by a human*
 
-<SwmMeta version="3.0.0" repo-id="Z2l0aHViJTNBJTNBY2lidWlsZHdoZWVsJTNBJTNBZ2lsYWRuYXZvdA==" repo-name="cibuildwheel" doc-type="overview"><sup>Powered by [Swimm](/)</sup></SwmMeta>
+<SwmMeta version="3.0.0" repo-id="Z2l0aHViJTNBJTNBY2lidWlsZHdoZWVsJTNBJTNBZ2lsYWRuYXZvdA==" repo-name="cibuildwheel"><sup>Powered by [Swimm](https://app.swimm.io/)</sup></SwmMeta>

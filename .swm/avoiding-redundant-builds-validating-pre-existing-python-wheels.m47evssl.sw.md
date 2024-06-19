@@ -3,17 +3,17 @@ title: 'Avoiding Redundant Builds: Validating Pre-existing Python Wheels '
 ---
 This document will cover the process of how cibuildwheel validates if a wheel has already been built for a specific Python configuration. The topics covered include:
 
-1. The role of the AlreadyBuiltWheelError class
-2. The use of the find_compatible_wheel function
+1. The role of the <SwmToken path="/cibuildwheel/util.py" pos="483:2:2" line-data="class AlreadyBuiltWheelError(Exception):">`AlreadyBuiltWheelError`</SwmToken> class
+2. The use of the <SwmToken path="/cibuildwheel/util.py" pos="760:2:2" line-data="def find_compatible_wheel(wheels: Sequence[T], identifier: str) -&gt; T | None:">`find_compatible_wheel`</SwmToken> function
 3. The build process across different platforms.
 
 <SwmSnippet path="/cibuildwheel/util.py" line="483">
 
 ---
 
-# The role of the AlreadyBuiltWheelError class
+# The role of the <SwmToken path="/cibuildwheel/util.py" pos="483:2:2" line-data="class AlreadyBuiltWheelError(Exception):">`AlreadyBuiltWheelError`</SwmToken> class
 
-The `AlreadyBuiltWheelError` class is used to raise an exception when a wheel with the same name has already been generated in the current run. The error message suggests checking the project configuration or running cibuildwheel with `CIBW_BUILD_VERBOSITY=1` to view build logs.
+The <SwmToken path="/cibuildwheel/util.py" pos="483:2:2" line-data="class AlreadyBuiltWheelError(Exception):">`AlreadyBuiltWheelError`</SwmToken> class is used to raise an exception when a wheel with the same name has already been generated in the current run. The error message suggests checking the project configuration or running cibuildwheel with <SwmToken path="/cibuildwheel/util.py" pos="490:5:7" line-data="            cibuildwheel with CIBW_BUILD_VERBOSITY=1 to view build logs.">`CIBW_BUILD_VERBOSITY=1`</SwmToken> to view build logs.
 
 ```python
 class AlreadyBuiltWheelError(Exception):
@@ -38,9 +38,9 @@ class AlreadyBuiltWheelError(Exception):
 
 ---
 
-# The use of the find_compatible_wheel function
+# The use of the <SwmToken path="/cibuildwheel/util.py" pos="760:2:2" line-data="def find_compatible_wheel(wheels: Sequence[T], identifier: str) -&gt; T | None:">`find_compatible_wheel`</SwmToken> function
 
-The `find_compatible_wheel` function is used to find a wheel with an abi3 or a none ABI tag in `wheels` that is compatible with the Python interpreter specified by `identifier` and that has been previously built. It checks various conditions to determine if a wheel is compatible.
+The <SwmToken path="/cibuildwheel/util.py" pos="760:2:2" line-data="def find_compatible_wheel(wheels: Sequence[T], identifier: str) -&gt; T | None:">`find_compatible_wheel`</SwmToken> function is used to find a wheel with an <SwmToken path="/cibuildwheel/util.py" pos="773:10:10" line-data="            if tag.abi == &quot;abi3&quot; and not free_threaded:">`abi3`</SwmToken> or a none ABI tag in <SwmToken path="/cibuildwheel/util.py" pos="760:4:4" line-data="def find_compatible_wheel(wheels: Sequence[T], identifier: str) -&gt; T | None:">`wheels`</SwmToken> that is compatible with the Python interpreter specified by <SwmToken path="/cibuildwheel/util.py" pos="760:13:13" line-data="def find_compatible_wheel(wheels: Sequence[T], identifier: str) -&gt; T | None:">`identifier`</SwmToken> and that has been previously built. It checks various conditions to determine if a wheel is compatible.
 
 ```python
 def find_compatible_wheel(wheels: Sequence[T], identifier: str) -> T | None:
@@ -72,4 +72,4 @@ def find_compatible_wheel(wheels: Sequence[T], identifier: str) -> T | None:
 
 *This is an auto-generated document by Swimm AI 🌊 and has not yet been verified by a human*
 
-<SwmMeta version="3.0.0" repo-id="Z2l0aHViJTNBJTNBY2lidWlsZHdoZWVsJTNBJTNBZ2lsYWRuYXZvdA==" repo-name="cibuildwheel"><sup>Powered by [Swimm](https://staging.swimm.cloud/)</sup></SwmMeta>
+<SwmMeta version="3.0.0" repo-id="Z2l0aHViJTNBJTNBY2lidWlsZHdoZWVsJTNBJTNBZ2lsYWRuYXZvdA==" repo-name="cibuildwheel"><sup>Powered by [Swimm](https://app.swimm.io/)</sup></SwmMeta>
