@@ -9,7 +9,7 @@ Platform Support in cibuildwheel refers to the ability of the tool to build Pyth
 
 # Platform Configuration
 
-This is the `build-platforms.toml` file which contains the configurations for each platform. Each platform has a list of Python configurations, specifying the Python versions and architectures supported. For example, for Linux, it supports Python versions from 3.6 to 3.13 on various architectures like x86_64, i686, aarch64, ppc64le, and s390x.
+This is the <SwmPath>[cibuildwheel/resources/build-platforms.toml](/cibuildwheel/resources/build-platforms.toml)</SwmPath> file which contains the configurations for each platform. Each platform has a list of Python configurations, specifying the Python versions and architectures supported. For example, for Linux, it supports Python versions from 3.6 to 3.13 on various architectures like x86_64, i686, aarch64, ppc64le, and s390x.
 
 ```toml
 [linux]
@@ -45,7 +45,7 @@ python_configurations = [
 
 # Platform Module
 
-The `get_platform_module` function in `__main__.py` returns the platform-specific module based on the platform name. These modules are used to build the Python wheels according to the configurations specified in the `build-platforms.toml` file.
+The <SwmToken path="/cibuildwheel/__main__.py" pos="275:2:2" line-data="def get_platform_module(platform: PlatformName) -&gt; PlatformModule:">`get_platform_module`</SwmToken> function in <SwmPath>[cibuildwheel/\__main_\_.py](/cibuildwheel/__main__.py)</SwmPath> returns the platform-specific module based on the platform name. These modules are used to build the Python wheels according to the configurations specified in the <SwmPath>[cibuildwheel/resources/build-platforms.toml](/cibuildwheel/resources/build-platforms.toml)</SwmPath> file.
 
 ```python
 # pylint: disable-next=inconsistent-return-statements
@@ -71,7 +71,7 @@ def get_platform_module(platform: PlatformName) -> PlatformModule:
 
 # Native Architecture
 
-The `native_arch` function in `architecture.py` determines the native architecture of the platform. This is used to ensure that the Python wheels are built for the correct architecture.
+The <SwmToken path="/cibuildwheel/architecture.py" pos="79:3:3" line-data="    def native_arch(platform: PlatformName) -&gt; Architecture | None:">`native_arch`</SwmToken> function in <SwmPath>[cibuildwheel/architecture.py](/cibuildwheel/architecture.py)</SwmPath> determines the native architecture of the platform. This is used to ensure that the Python wheels are built for the correct architecture.
 
 ```python
     def native_arch(platform: PlatformName) -> Architecture | None:
@@ -105,4 +105,4 @@ The `native_arch` function in `architecture.py` determines the native architectu
 
 *This is an auto-generated document by Swimm AI 🌊 and has not yet been verified by a human*
 
-<SwmMeta version="3.0.0" repo-id="Z2l0aHViJTNBJTNBY2lidWlsZHdoZWVsJTNBJTNBZ2lsYWRuYXZvdA==" repo-name="cibuildwheel" doc-type="overview"><sup>Powered by [Swimm](/)</sup></SwmMeta>
+<SwmMeta version="3.0.0" repo-id="Z2l0aHViJTNBJTNBY2lidWlsZHdoZWVsJTNBJTNBZ2lsYWRuYXZvdA==" repo-name="cibuildwheel"><sup>Powered by [Swimm](https://app.swimm.io/)</sup></SwmMeta>
