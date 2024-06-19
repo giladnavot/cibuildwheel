@@ -1,7 +1,11 @@
 ---
 title: Exploring Wheels Building
 ---
-Wheels Building refers to the process of creating a wheel, which is a built-package format for Python. A wheel is a ZIP-format archive with a specially formatted filename and the .whl extension. It contains all the files necessary for the installation of a Python app. In cibuildwheel, wheels are built for different Python versions and platforms. The configurations for these builds are specified in the 'build-platforms.toml' file. The actual building process is handled by the 'build' function in the respective platform-specific files ([macos.py](http://macos.py), [windows.py](http://windows.py), [linux.py](http://linux.py), [pyodide.py](http://pyodide.py)). The build process involves setting up the build environment, running pre-build commands, building the wheel, and repairing the wheel if necessary.
+Wheels Building refers to the process of creating a wheel, which is a built-package format for Python. A wheel is a ZIP-format archive with a specially formatted filename and the .whl extension. It contains all the files necessary for the installation of a Python app.&nbsp;
+
+In cibuildwheel, wheels are built for different Python versions and platforms. The configurations for these builds are specified in the <SwmPath>[cibuildwheel/resources/build-platforms.toml](/cibuildwheel/resources/build-platforms.toml)</SwmPath> file. The actual building process is handled by the 'build' function in the respective platform-specific files (<SwmPath>[cibuildwheel/macos.py](/cibuildwheel/macos.py)</SwmPath>, <SwmPath>[cibuildwheel/windows.py](/cibuildwheel/windows.py)</SwmPath>, <SwmPath>[cibuildwheel/linux.py](/cibuildwheel/linux.py)</SwmPath>, <SwmPath>[cibuildwheel/pyodide.py](/cibuildwheel/pyodide.py)</SwmPath>).&nbsp;
+
+The build process involves setting up the build environment, running pre-build commands, building the wheel, and repairing the wheel if necessary.
 
 <SwmSnippet path="/cibuildwheel/resources/build-platforms.toml" line="1">
 
@@ -175,4 +179,4 @@ def build(options: Options, tmp_path: Path) -> None:
 
 *This is an auto-generated document by Swimm AI 🌊 and has not yet been verified by a human*
 
-<SwmMeta version="3.0.0" repo-id="Z2l0aHViJTNBJTNBY2lidWlsZHdoZWVsJTNBJTNBZ2lsYWRuYXZvdA==" repo-name="cibuildwheel"><sup>Powered by [Swimm](https://staging.swimm.cloud/)</sup></SwmMeta>
+<SwmMeta version="3.0.0" repo-id="Z2l0aHViJTNBJTNBY2lidWlsZHdoZWVsJTNBJTNBZ2lsYWRuYXZvdA==" repo-name="cibuildwheel"><sup>Powered by [Swimm](https://app.swimm.io/)</sup></SwmMeta>
